@@ -1,0 +1,2 @@
+{'email': 'asdqwe', 'name': '김기덕', 'username': 'asdqwe', 'password': '1234'}
+{'email': 'zxcasd', 'name': '김기덩', 'username': 'zxcasd', 'password': '4321'}
