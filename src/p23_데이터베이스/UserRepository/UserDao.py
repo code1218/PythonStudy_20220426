@@ -1,4 +1,5 @@
 from User import UserMst
+import pymysql
 
 class UserDao:
 
@@ -15,7 +16,6 @@ class UserDao:
         userList = list()
 
         con = self.pool.getConnection()
-        print(con)
         sql = """
             select 
                 * 
@@ -39,3 +39,34 @@ class UserDao:
             userList.append(user)
         self.pool.freeConnection(con)
         return userList
+
+    def getUserByUsername(self, username):
+        con = self.pool.getConnection()
+        cur = con.cursor(pymysql.cursors.DictCursor)
+        sql = f"""
+            select
+                *
+            from
+                user_mst
+            where
+                username = '{username}'
+        """
+        cur.execute(sql)
+        rs = cur.fetchone()
+        print(rs)
+        self.pool.freeConnection(con)
+
+    def deleteUserByUsername(self, username):
+        key = 'username'
+        con = self.pool.getConnection()
+        cur = con.cursor(pymysql.cursors.DictCursor)
+        sql = f"""
+            delete
+            from
+                user_mst
+            where
+                {key} = '{username}'
+        """
+        cur.execute(sql)
+        con.commit()
+        self.pool.freeConnection(con)

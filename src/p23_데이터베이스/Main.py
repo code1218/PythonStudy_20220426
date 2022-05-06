@@ -10,3 +10,11 @@ if __name__ == "__main__":
     userList = userDao.getUserAll()
     for user in userList:
         user.toString()
+
+    userDao.getUserByUsername("junil")
+
+    userDao.deleteUserByUsername("aa")
+
+    userList = userDao.getUserAll()
+    for user in userList:
+        user.toString()
