@@ -20,3 +20,14 @@ class UserMst:
         self.password = password
         self.create_date = create_date
         self.update_date = update_date
+
+    def toString(self):
+        print(f"""
+usercode: {self.usercode}
+email: {self.email}
+name: {self.name}
+username: {self.username}
+password: {self.password}
+create_date: {self.create_date}
+update_date: {self.update_date}
+        """)

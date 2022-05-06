@@ -5,4 +5,8 @@ os.system('cls')
 
 if __name__ == "__main__":
     userDao = UserDao(pool=DBConnectionPy())
-    userDao.test()
+    #userDao.test()
+
+    userList = userDao.getUserAll()
+    for user in userList:
+        user.toString()

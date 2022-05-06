@@ -10,7 +10,7 @@ class DBConnectionPy:
 
     def getConnection(self):
         print(f"[{self.database}] 데이터 베이스를 연결합니다.")
-        return pymysql.connect(
+        con = pymysql.connect(
             host = self.host,
             port = self.port,
             user = self.user,
@@ -18,6 +18,7 @@ class DBConnectionPy:
             database = self.database,
             charset = self.charset
         )
+        return con
 
     def freeConnection(self, connect):
         connect.close()
