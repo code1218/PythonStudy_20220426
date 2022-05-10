@@ -53,7 +53,6 @@ class UserDao:
         """
         cur.execute(sql)
         rs = cur.fetchone()
-        print(rs)
         self.pool.freeConnection(con)
 
     def deleteUserByUsername(self, username):

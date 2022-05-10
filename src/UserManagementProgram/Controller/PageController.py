@@ -3,12 +3,14 @@ import os
 from Repository.UserMst import UserMst
 from Service.UserService import UserService
 
+
 class PageController:
 
     def index(self):
         selectFlag = True
 
         os.system('cls')
+        print(__name__)
         print("[사용자 관리 프로그램]")
         print("1. 회원가입")
         print("2. 로그인")
@@ -51,4 +53,12 @@ class PageController:
         input("계속 하시려면 아무키나 누르세요...")
 
     def signin(self):
-        pass
+        os.system('cls')
+        print("[로그인]")
+        username = input("사용자이름: ")
+        password = input("비밀번호: ")
+
+        userService = UserService()
+        userService.signin(username, password)
+
+        
