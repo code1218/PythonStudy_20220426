@@ -1,6 +1,6 @@
 import pymysql
 
-class DBConnectionPy:
+class DBConnection:
 
     @staticmethod
     def getConnection():

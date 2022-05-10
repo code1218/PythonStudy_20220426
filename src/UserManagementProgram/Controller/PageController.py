@@ -1,6 +1,7 @@
 import os
 
-from git.PythonStudy_junil.src.UserManagementProgram.Repository.UserMst import UserMst
+from Repository.UserMst import UserMst
+from Service.UserService import UserService
 
 class PageController:
 
@@ -39,6 +40,15 @@ class PageController:
         password = input("비밀번호: ")
 
         user = UserMst()
+        user.email = email
+        user.name = name
+        user.username = username
+        user.password = password
+        #암호화 <-> 복호화
+        userService = UserService()
+        userService.signup(user)
+        print("회원가입이 완료되었습니다.")
+        input("계속 하시려면 아무키나 누르세요...")
 
     def signin(self):
         pass

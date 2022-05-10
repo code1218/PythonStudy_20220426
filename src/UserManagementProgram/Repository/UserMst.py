@@ -5,6 +5,7 @@ class UserMst:
     name = None
     username = None
     password = None
+    decodeKey = None
     create_date = None
     update_date = None
 
